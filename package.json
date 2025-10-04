@@ -1,0 +1,77 @@
+{
+  "name": "ts_path_alias_fixer",
+  "displayName": "ts_path_alias_fixer",
+  "description": "This extension will help fix any long relative path imports in the typescript/javascript project with custom path alias",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "publisher": "vedhashrees",
+  "author": {
+    "name": "Vedhashree Sampath"
+  },
+  "pricing": "Free",
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Linters",
+    "Other",
+    "Language Packs",
+    "Extension Packs"
+  ],
+  "icon": "icon.png",
+  "activationEvents": [
+    "onCommand:ts_path_alias_fixer.fixTsImports"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ts_path_alias_fixer.fixTsImports",
+        "title": "TS Path Alias Fixer"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "TS Path Alias Fixer",
+      "properties": {
+        "ts_path_alias_fixer.alias": {
+          "type": "string",
+          "default": "@",
+          "description": "The alias that should be used for replacement in import paths in the project (e.g., @ or @services)"
+        },
+        "ts_path_alias_fixer.base": {
+          "type": "string",
+          "default": "src",
+          "description": "The base directory path for which the alias is to be mapped. \n It should match the paths defined as per tsconfig.json file of your project (e.g., src or src/lib/apiClient/services)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.104.0",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "ts-path-alias-fixer": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vedhashrees/vscode-extension-for-ts-path-alias-fixer"
+  }
+}
