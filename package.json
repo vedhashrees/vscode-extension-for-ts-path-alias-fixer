@@ -1,6 +1,6 @@
 {
-  "name": "ts_path_alias_fixer",
-  "displayName": "ts_path_alias_fixer",
+  "name": "ts-path-alias-fixer",
+  "displayName": "TS Path Alias Fixer (fix-ts-imports)",
   "description": "This extension will help fix any long relative path imports in the typescript/javascript project with custom path alias",
   "version": "0.0.1",
   "engines": {
